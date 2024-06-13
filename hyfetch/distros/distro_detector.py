@@ -8,6 +8,10 @@ def detect(name: str) -> AsciiArt | None:
     if not name:
         return None
     name = name.lower()
+    if name.startswith('celeste') or name.startswith('ascii'):
+        from .celeste import celeste
+        return celeste
+    
     if name.startswith('adélie') or name.startswith('adelie'):
         from .adelie import adelie
         return adelie
